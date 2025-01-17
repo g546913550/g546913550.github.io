@@ -1,0 +1,347 @@
+/* 自定义样式 */
+.skill-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) translateX(5px);
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: 0.8s;
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 响应式图片 */
+img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* 链接悬停效果 */
+a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #3B82F6, transparent);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+    transform: translateX(3px);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563EB;
+}
+
+/* 页面加载动画 */
+@keyframes surge-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+section {
+    animation: surge-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 卡片悬浮效果 */
+.contact-info, .social-links {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-info:hover, .social-links:hover {
+    transform: translateX(5px) translateY(-5px);
+    box-shadow: -5px 5px 15px rgba(59, 130, 246, 0.15);
+}
+
+/* 座右铭动画效果 */
+.motto {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.motto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.motto::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #3B82F6, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.motto:hover::after {
+    transform: scaleX(1);
+}
+
+.motto p {
+    position: relative;
+    z-index: 1;
+}
+
+/* 为座右铭文字添加打字机效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.motto p {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 座右铭样式 */
+.motto-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.3);
+}
+
+.motto-card:hover {
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.4);
+}
+
+/* 波浪动画 */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 80%);
+    transform-origin: 50% 48%;
+    animation: wave 8s infinite linear;
+    border-radius: 44%;
+}
+
+.wave:nth-child(1) {
+    animation: wave 8s infinite linear;
+}
+
+@keyframes wave {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 文字渐入动画 */
+.motto-text p {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.motto-text p:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.motto-text p:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 固定悬浮座右铭样式 */
+.motto-float {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2.5rem 0;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    transform: translateX(calc(100% - 3.5rem));
+    width: 8rem;
+    background: linear-gradient(to left, rgba(30, 58, 138, 0.7), rgba(30, 64, 158, 0.7));
+    backdrop-filter: blur(8px);
+}
+
+.motto-float:hover {
+    transform: translateX(calc(100% - 8rem));
+    box-shadow: -10px 0 25px rgba(30, 58, 138, 0.4);
+    padding: 2.5rem 1rem;
+}
+
+.motto-text {
+    display: flex;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-left: -0.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+.motto-float:hover .motto-text {
+    justify-content: center;
+    margin-left: 0;
+}
+
+/* 竖版文字样式 */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    display: inline-block;
+    letter-spacing: 0.5em;
+    line-height: 2;
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+}
+
+.vertical-text .text-transparent {
+    opacity: 0;
+    margin: 0.3em 0;
+    display: inline-block;
+}
+
+/* 波浪动画 */
+.motto-float .wave {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform-origin: 50% 48%;
+    animation: wave 12s infinite linear;
+    border-radius: 40%;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .motto-float {
+        transform: translateX(calc(100% - 3rem));
+    }
+    .motto-float:hover {
+        transform: translateX(calc(100% - 10rem));
+    }
+    .vertical-text {
+        font-size: 1.25rem;
+        letter-spacing: 0.3em;
+    }
+}
+
+/* 二维码弹出动画 */
+.group:hover .group-hover\:block {
+    animation: popup 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 证书轮播动画 */
+@keyframes carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-carousel {
+    animation: carousel 30s linear infinite;
+    width: max-content;
+}
+
+.animate-carousel:hover {
+    animation-play-state: paused;
+}
+
+.certificate-carousel {
+    background: white;
+}
+
+.certificate-carousel img {
+    transition: transform 0.3s ease;
+}
+
+.certificate-carousel img:hover {
+    transform: scale(1.05);
+} 

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龚凌宏的个人简介</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100">
+    <!-- 导航栏 -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="flex items-center">
+                        <span class="font-semibold text-blue-600 text-lg">龚凌宏</span>
+                    </a>
+                    <!-- 添加简历下载按钮 -->
+                    <a href="龚凌宏简历.pdf" download class="flex items-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        简历下载
+                    </a>
+                </div>
+                <!-- 导航链接 -->
+                <div class="hidden md:flex items-center space-x-3" id="menu">
+                    <a href="#about" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">关于我</a>
+                    <a href="#experience" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">工作经历</a>
+                    <a href="#skills" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">技能</a>
+                    <a href="#education" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">教育经历</a>
+                    <a href="#certificates" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">证书</a>
+                    <a href="#contact" class="py-4 px-2 text-gray-600 hover:text-blue-600 transition duration-300">联系方式</a>
+                </div>
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden flex items-center" onclick="toggleMenu()">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- 移动端展开菜单 -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-2 pb-3">
+                    <a href="#about" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">关于我</a>
+                    <a href="#experience" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">工作经历</a>
+                    <a href="#skills" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">技能</a>
+                    <a href="#education" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">教育经历</a>
+                    <a href="#certificates" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">证书</a>
+                    <a href="#contact" class="py-2 px-2 text-gray-600 hover:text-blue-600 transition duration-300">联系方式</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 固定悬浮的座右铭 - 仅在桌面端显示 -->
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-20 md:block hidden">
+        <div class="motto-float bg-gradient-to-br from-blue-900/70 to-blue-800/70 backdrop-blur-sm rounded-l-xl shadow-2xl p-6 text-center hover-expand">
+            <div class="relative z-10">
+                <div class="motto-text">
+                    <p class="vertical-text text-blue-100 text-2xl font-medium leading-relaxed tracking-widest">
+                        纵无舟楫渡沧海<span class="text-transparent">．</span>我亦劈浪踏惊涛
+                    </p>
+                </div>
+            </div>
+            <div class="wave"></div>
+        </div>
+    </div>
+
+    <!-- 添加移动端菜单的JavaScript -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 点击菜单项后自动收起菜单
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- 主要内容 -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- 移动端座右铭 -->
+        <div class="md:hidden block mt-16 mb-8">
+            <div class="bg-gradient-to-br from-blue-900/70 to-blue-800/70 backdrop-blur-sm rounded-xl shadow-2xl p-4 text-center">
+                <p class="text-blue-100 text-xl font-medium leading-relaxed">
+                    纵无舟楫渡沧海，我亦劈浪踏惊涛
+                </p>
+            </div>
+        </div>
+
+        <!-- 个人介绍部分 -->
+        <section id="about" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8 hover:shadow-2xl transition duration-300">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">关于我</h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-blue-100 rounded-xl transform rotate-6 transition-transform group-hover:rotate-12"></div>
+                            <img src="avatar.jpg" alt="个人照片" class="relative rounded-xl w-64 h-64 object-cover mx-auto shadow-lg transform transition duration-300 hover:scale-105">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8">
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            你好！我是龚凌宏，大家都叫我宏仁。一位从业五年的营销师，充满热情的年轻专业人士。我擅长解决问题，喜欢探索新技术，并且热衷于持续学习和自我提升。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            在工作中，我注重细节，善于团队协作，并且能够快速适应新的环境和挑战。我相信通过不断学习和实践，每个人都能实现自己的目标。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工作经历部分 -->
+        <section id="experience" class="mb-16">
+            <div class="bg-gradient-to-r from-gray-800/90 to-blue-800/90 backdrop-blur-md rounded-xl shadow-xl p-8 hover:shadow-2xl transition duration-300 text-white">
+                <h2 class="text-2xl font-bold mb-8">工作经历</h2>
+                
+                <!-- 杭州甲乙画科技 -->
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-2">
+                        <h3 class="text-xl font-semibold mb-2 md:mb-0">杭州甲乙画科技有限公司</h3>
+                        <span class="text-blue-300">2024.07 - 至今</span>
+                    </div>
+                    <p class="text-lg text-blue-200 mb-3">网络推广主管</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-4">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2 text-blue-300">核心职责</h4>
+                                <ul class="grid grid-cols-1 gap-2">
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>构建数据分析体系，开发飞书多维表格半自动化大屏，提升数据可视化效率</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>深度竞品分析，把握行业动态，为内容团队提供精准的素材策略建议</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>全方位投放策略规划，整合AD、本地推广、Dou+等多平台资源</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>团队管理与KPI达成，推动内容加热、广告转化等多维度目标实现</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-2 text-blue-300">主要成就</h4>
+                                <ul class="space-y-1">
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span>通过数据驱动优化，成功将线索获取成本降低20%</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span>优化本地推广策略，实现ROI提升10%</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span>带领团队打造多个爆款视频，显著提升品牌影响力</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-video md:mt-0 mt-4">
+                            <div class="rounded-xl overflow-hidden shadow-2xl">
+                                <video 
+                                    class="w-full h-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                    poster="video-poster.jpg">
+                                    <source src="jiayi.mp4" type="video/mp4">
+                                    您的浏览器不支持视频播放。
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 安徽云聚数字 -->
+                <div class="mb-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold">安徽云聚数字创意产业园发展有限公司</h3>
+                        <span class="text-blue-300">2023.09 - 2024.04</span>
+                    </div>
+                    <p class="text-lg text-blue-200 mb-4">高级投放运营</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-6">
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-3 text-blue-300">核心职责</h4>
+                                <ul class="grid grid-cols-1 gap-4">
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>制定精准的产品投放策略，深度分析客户优劣势，实现资源最优配置</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>优化直播间效果，从设备选型到场景布置，全方位提升直播质量</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>店铺运营优化，包括关键词分析、主图优化、SKU管理等</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>开发创新的投放策略，包括爆品分析和新品开发两大方向</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-video">
+                            <div class="rounded-xl overflow-hidden shadow-2xl">
+                                <video 
+                                    class="w-full h-full object-cover"
+                                    controls
+                                    preload="metadata">
+                                    <source src="yunjv.mp4" type="video/mp4">
+                                    您的浏览器不支持视频播放。
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 抖音电商学习中心 -->
+                <div class="mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="experience-content">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-semibold">抖音电商学习中心</h3>
+                                <span class="text-blue-300">2022 - 2023.12</span>
+                            </div>
+                            <p class="text-lg text-blue-200 mb-4">电商讲师</p>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-3 text-blue-300">核心职责</h4>
+                                    <ul class="grid grid-cols-1 gap-4">
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                            <span>负责电商运营课程开发与授课，培养专业电商人才</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                            <span>开发实战案例教学内容，提升学员实操能力</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                            <span>制定个性化教学方案，帮助学员解决实际问题</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                            <span>分享一线运营经验，助力学员快速成长</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-image">
+                            <img src="douyin.jpg" alt="抖音电商学习中心" class="rounded-xl shadow-2xl w-full hover:scale-105 transition duration-300 transform hover:-rotate-2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 江苏中服网络 -->
+                <div class="mb-12">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold">江苏中服网络科技有限公司</h3>
+                        <span class="text-blue-300">2019.10 - 2023.08</span>
+                    </div>
+                    <p class="text-lg text-blue-200 mb-4">网络投放专家</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-6">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-lg font-semibold mb-3 text-blue-300">重要成就</h4>
+                                <p class="mb-4">带领团队将公司发展成为抖音top级DP服务商，实现从2人团队到行业领先的跨越式发展</p>
+                                <ul class="grid grid-cols-1 gap-4">
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>全面负责千川巨量引擎广告投放，持续优化ROI表现</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>建立完善的数据分析体系，实现投放效果的精准优化</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <div class="w-2 h-2 bg-blue-400 rounded-full mt-2"></div>
+                                        <span>深度参与内容策略制定，推动多个爆款内容的打造</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="experience-image">
+                            <img src="zhongfu.jpg" alt="江苏中服会议照片" class="rounded-xl shadow-2xl w-full hover:scale-105 transition duration-300 transform hover:-rotate-2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 早期经历 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-300">早期职业经历</h4>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span>义乌市麟宴包装有限公司</span>
+                            <span class="text-blue-300">2018.02 - 2019.10</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>义乌市出入境管理局</span>
+                            <span class="text-blue-300">2015.10 - 2018.02</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>杭州欧鹏品牌管理有限公司</span>
+                            <span class="text-blue-300">2015.01 - 2015.09</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能部分 -->
+        <section id="skills" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-8 text-blue-600 border-b border-blue-100 pb-4">我的技能特长</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 专业技能 -->
+                    <div class="skill-card group p-6 border border-blue-100 rounded-lg hover:shadow-xl transition duration-500 bg-gradient-to-br from-white to-blue-50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full -mr-12 -mt-12"></div>
+                        <div class="relative">
+                            <h3 class="font-semibold mb-6 text-blue-800 text-xl flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                </svg>
+                                专业技能
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">电商运营 | 熟悉抖音、快手等平台运营策略，擅长内容策划与数据分析</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">数据分析 | 精通数据可视化工具，能够进行深度市场分析和用户行为研究</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">项目管理 | 具备电商项目全流程管理经验，善于团队协调与资源整合</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">营销策划 | 擅长制定整合营销方案，有丰富的活动策划和执行经验</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 个人特质 -->
+                    <div class="skill-card group p-6 border border-blue-100 rounded-lg hover:shadow-xl transition duration-500 bg-gradient-to-br from-white to-blue-50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full -mr-12 -mt-12"></div>
+                        <div class="relative">
+                            <h3 class="font-semibold mb-6 text-blue-800 text-xl flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                                </svg>
+                                个人特质
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">沟通能力 | 善于倾听与表达，能够有效进行跨部门沟通与协调</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">学习能力 | 保持持续学习的热情，快速掌握新知识和技能</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">创新思维 | 善于突破常规思维，提出创新性解决方案</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">抗压能力 | 能够在高压环境下保持冷静，高效完成任务</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">执行力强 | 目标导向，注重细节，确保项目高质量完成</span>
+                                </li>
+                                <li class="flex items-center space-x-3 group">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                    <span class="text-gray-700">责任心强 | 对工作充满热情，勇于担当，追求卓越</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育经历部分 -->
+        <section id="education" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8 hover:shadow-2xl transition duration-300">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">教育经历</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/4">
+                        <img src="hdu-logo.png" alt="杭州电子科技大学" class="w-48 h-48 object-contain mx-auto">
+                    </div>
+                    <div class="md:w-3/4">
+                        <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-lg border border-blue-100">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-blue-800">杭州电子科技大学</h3>
+                                    <p class="text-gray-600 mt-2">会计专业 · 大专</p>
+                                </div>
+                                <span class="text-gray-500">2012-2015</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <span class="text-gray-700">系统学习会计相关专业知识</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                    <span class="text-gray-700">培养了严谨的工作态度和分析能力</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 资格证书部分 -->
+        <section id="certificates" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">资格证书</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="certificate-card p-6 border border-blue-100 rounded-lg hover:shadow-xl transition duration-300 bg-gradient-to-br from-white to-blue-50">
+                        <h3 class="font-semibold mb-6 text-blue-800 text-xl border-b border-blue-100 pb-3">我的证书</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3 group">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                <span class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg">抖音电商学习中心讲师</span>
+                            </li>
+                            <li class="flex items-center space-x-3 group">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                <span class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg">互联网营销师高级讲师</span>
+                            </li>
+                            <li class="flex items-center space-x-3 group">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                <span class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg">互联网营销师四级</span>
+                            </li>
+                            <li class="flex items-center space-x-3 group">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                <span class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg">千川中级营销师</span>
+                            </li>
+                            <li class="flex items-center space-x-3 group">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-125 transition-transform"></div>
+                                <span class="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg">商家运营初级</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="certificate-carousel relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-100">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="flex animate-carousel">
+                                <!-- 第一组图片 -->
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert1.jpg" alt="证书1" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert2.jpg" alt="证书2" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert3.jpg" alt="证书3" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert4.jpg" alt="证书4" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert5.jpg" alt="证书5" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <!-- 重复第一组图片以实现无缝轮播 -->
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert1.jpg" alt="证书1" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert2.jpg" alt="证书2" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert3.jpg" alt="证书3" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert4.jpg" alt="证书4" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                                <div class="min-w-[400px] h-[400px] p-2 flex items-center justify-center">
+                                    <div class="bg-white rounded-lg shadow-lg w-full h-full flex items-center justify-center hover:shadow-xl transition duration-300">
+                                        <img src="cert5.jpg" alt="证书5" class="w-full h-full object-contain p-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">联系方式</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="contact-info bg-gradient-to-br from-white to-blue-50 p-6 rounded-lg border border-blue-100">
+                        <p class="text-gray-700 mb-4">
+                            <span class="font-semibold text-blue-800">邮箱：</span>
+                            <a href="mailto:54691300@qq.com" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                                54691300@qq.com
+                            </a>
+                        </p>
+                        <p class="text-gray-700">
+                            <span class="font-semibold text-blue-800">微信|抖音：</span>
+                            <span class="text-gray-800">Glh546913550</span>
+                        </p>
+                    </div>
+                    <div class="social-links bg-gradient-to-br from-white to-blue-50 p-6 rounded-lg border border-blue-100">
+                        <p class="text-gray-700 mb-4">
+                            <span class="font-semibold text-blue-800">社交媒体：</span>
+                        </p>
+                        <div class="flex space-x-8">
+                            <!-- 微信图标 -->
+                            <a href="https://m.weixin.qq.com/" target="_blank" class="text-gray-600 hover:text-green-600 transition duration-300 relative group">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.49.49 0 0 1-.011-.214.504.504 0 0 1 .189-.338C23.088 18.06 24.1 16.37 24.1 14.506c0-3.37-3.191-6.114-7.162-5.648zm-2.222 3.707c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+                                </svg>
+                                <!-- 二维码弹出框 -->
+                                <div class="absolute hidden group-hover:block -top-[320px] -left-[120px] bg-white rounded-lg shadow-xl z-50 transition-all duration-300 opacity-0 group-hover:opacity-100 w-[280px] h-[280px] p-[10px]">
+                                    <div class="w-full h-full flex items-center justify-center">
+                                        <img src="wechat-qr.jpg" alt="微信二维码" class="w-full h-full object-contain">
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 飞书图标 -->
+                            <a href="https://www.feishu.cn/" target="_blank" class="text-gray-600 hover:text-blue-600 transition duration-300 relative group">
+                                <img src="feishu.png" alt="飞书" class="w-8 h-8 filter grayscale hover:grayscale-0 transition duration-300">
+                                <!-- 二维码弹出框 -->
+                                <div class="absolute hidden group-hover:block -top-[320px] -left-[120px] bg-white rounded-lg shadow-xl z-50 transition-all duration-300 opacity-0 group-hover:opacity-100 w-[280px] h-[280px] p-[10px]">
+                                    <div class="w-full h-full flex items-center justify-center">
+                                        <img src="feishu-qr.jpg" alt="飞书二维码" class="w-full h-full object-contain">
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 抖音图标 -->
+                            <a href="https://www.douyin.com/" target="_blank" class="text-gray-600 hover:text-black transition duration-300 relative group">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                                </svg>
+                                <!-- 二维码弹出框 -->
+                                <div class="absolute hidden group-hover:block -top-[320px] -left-[120px] bg-white rounded-lg shadow-xl z-50 transition-all duration-300 opacity-0 group-hover:opacity-100 w-[280px] h-[280px] p-[10px]">
+                                    <div class="w-full h-full flex items-center justify-center">
+                                        <img src="douyin-qr.jpg" alt="抖音二维码" class="w-full h-full object-contain">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 我来时的路 -->
+        <section id="journey" class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-xl p-8">
+                <h2 class="text-2xl font-bold mb-6 text-blue-600">我来时的路</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 生活趣味 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey1.jpg" alt="生活趣味" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">热爱生活</h3>
+                                    <p class="text-sm opacity-90">享受美食，品味人生</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 探索精神 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey2.jpg" alt="探索精神" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">探索世界</h3>
+                                    <p class="text-sm opacity-90">在旅途中发现自我</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 专业成长 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey3.jpg" alt="专业成长" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">专业成长</h3>
+                                    <p class="text-sm opacity-90">电商领域的不断进步</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 团队协作 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey4.jpg" alt="团队协作" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">团队精神</h3>
+                                    <p class="text-sm opacity-90">与优秀的伙伴共同成长</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 海边风景 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey5.jpg" alt="海边风景" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">追逐梦想</h3>
+                                    <p class="text-sm opacity-90">面向大海，春暖花开</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 创新突破 -->
+                    <div class="journey-card group">
+                        <div class="relative overflow-hidden rounded-xl aspect-square">
+                            <img src="journey6.jpg" alt="创新突破" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h3 class="text-xl font-semibold mb-2">创新突破</h3>
+                                    <p class="text-sm opacity-90">永不停歇的前进脚步</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="bg-gradient-to-r from-blue-600 to-blue-800 mt-8">
+            <div class="max-w-6xl mx-auto px-4 py-6">
+                <p class="text-center text-white">© 2025 龚凌宏的个人网站，欢迎大家围观. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html> 
