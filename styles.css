@@ -309,11 +309,11 @@ section {
 }
 
 @keyframes popup {
-    from {
+    0% {
         opacity: 0;
         transform: translateY(10px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
@@ -321,8 +321,12 @@ section {
 
 /* 证书轮播动画 */
 @keyframes carousel {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(-50%); 
+    }
 }
 
 .animate-carousel {
@@ -344,4 +348,36 @@ section {
 
 .certificate-carousel img:hover {
     transform: scale(1.05);
+}
+
+/* 社交媒体部分的响应式样式 */
+@media screen and (max-width: 768px) {
+    .social-links {
+        padding: 1rem;
+    }
+    
+    .social-links .flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .social-links .flex-col {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .social-links .w-\[280px\] {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .social-links .w-\[280px\] {
+        width: 200px;
+        height: 200px;
+    }
 } 
