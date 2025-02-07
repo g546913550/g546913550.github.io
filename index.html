@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>龚凌宏的个人简介</title>
+    <!-- 安全相关meta标签 -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>龚凌宏的博客</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,7 +19,7 @@
             <div class="flex justify-between">
                 <div class="flex items-center space-x-4">
                     <a href="#" class="flex items-center">
-                        <span class="font-semibold text-blue-600 text-lg">龚凌宏</span>
+                        <span class="font-semibold text-blue-600 text-lg">龚凌宏的博客</span>
                     </a>
                     <!-- 添加简历下载按钮 -->
                     <a href="龚凌宏简历.pdf" download class="flex items-center py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-sm">
@@ -714,7 +719,17 @@
         <!-- 页脚 -->
         <footer class="bg-gradient-to-r from-blue-600 to-blue-800 mt-8">
             <div class="max-w-6xl mx-auto px-4 py-6">
-                <p class="text-center text-white">© 2025 龚凌宏的个人网站，欢迎大家围观. All rights reserved.</p>
+                <div class="text-center text-white space-y-2">
+                    <p>© 2025 龚凌宏的博客，欢迎大家围观. All rights reserved.</p>
+                    <p class="text-sm opacity-80">
+                        <a href="https://beian.miit.gov.cn/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="hover:text-blue-200 transition duration-300">
+                            浙ICP备2025149616号
+                        </a>
+                    </p>
+                </div>
             </div>
         </footer>
     </main>

@@ -1,16 +1,34 @@
+// 启用严格模式
+'use strict';
+
+// 防止XSS的基本函数
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 // 检测是否为移动设备
 const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 // 移动端菜单切换
 function toggleMenu() {
     const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
+    if (menu) {
+        menu.classList.toggle('hidden');
+    }
 }
 
 // 点击菜单项后自动收起菜单
 document.querySelectorAll('#mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('hidden');
+        const menu = document.getElementById('mobile-menu');
+        if (menu) {
+            menu.classList.add('hidden');
+        }
     });
 });
 
@@ -21,6 +39,16 @@ const qrCodes = {
     1: 'feishu-qr',
     2: 'douyin-qr'
 };
+
+// 安全的URL检查函数
+function isSafeUrl(url) {
+    try {
+        const parsedUrl = new URL(url);
+        return ['http:', 'https:', 'weixin:'].includes(parsedUrl.protocol);
+    } catch (e) {
+        return false;
+    }
+}
 
 if (isMobile) {
     // 移动端点击处理
@@ -81,3 +109,13 @@ if (isMobile) {
         });
     });
 }
+
+// 防止点击劫持
+if (window.self !== window.top) {
+    window.top.location = window.self.location;
+}
+
+// 禁用右键菜单（可选）
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
